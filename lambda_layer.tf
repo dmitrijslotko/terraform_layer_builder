@@ -23,4 +23,5 @@ resource "aws_lambda_layer_version" "lambda_layer" {
   layer_name          = var.layer_name
   source_code_hash    = fileexists(data.archive_file.dependencies.output_path) ? filebase64sha256(data.archive_file.dependencies.output_path) : data.archive_file.dependencies.output_base64sha256
   compatible_runtimes = var.compatible_runtimes
+  skip_destroy        = var.skip_destroy
 }
