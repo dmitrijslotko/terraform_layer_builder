@@ -1,6 +1,6 @@
 resource "null_resource" "node_dependencies" {
   provisioner "local-exec" {
-    working_dir = var.layer_directory
+    working_dir = var.package_directory
     command     = "npm install"
   }
 

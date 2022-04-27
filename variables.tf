@@ -15,3 +15,7 @@ variable "skip_destroy" {
   type    = bool
   default = false
 }
+
+variable "package_directory" {
+  type = string
+}
