@@ -16,6 +16,12 @@ variable "skip_destroy" {
   default = false
 }
 
-variable "package_directory" {
-  type = string
+variable "bucket" {
+  type    = string
+  default = null
+}
+
+variable "key" {
+  type    = string
+  default = null
 }
