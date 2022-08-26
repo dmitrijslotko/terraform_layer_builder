@@ -62,7 +62,7 @@ Assuming:
 
 ```hcl
 module "lambda_layer" {
-  source            = "github.com/dmitrijslotko/terraform_layer_builder.git?ref=v1.1.2"
+  source            = "github.com/dmitrijslotko/terraform_layer_builder.git?ref=v1.1.1_LTS"
   layer_name        = "my_layer"
   layer_directory   = "./layer"
   modules_directory = "./layer/nodejs"
