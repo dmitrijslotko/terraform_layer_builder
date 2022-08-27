@@ -3,12 +3,12 @@ locals {
 }
 resource "null_resource" "node_dependencies" {
   provisioner "local-exec" {
-    working_dir = var.layer_directory
+    working_dir = "${var.layer_directory}/nodejs"
     command     = "npm install"
   }
 
   triggers = {
-    trigger_every_time = filemd5("package.json")
+    trigger_every_time = timestamp()
   }
 }
 
