@@ -8,7 +8,7 @@ variable "layer_name" {
 
 variable "compatible_runtimes" {
   type    = list(string)
-  default = ["nodejs14.x"]
+  default = ["nodejs16.x"]
 }
 
 variable "skip_destroy" {
