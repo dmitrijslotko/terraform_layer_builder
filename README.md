@@ -34,7 +34,6 @@ module "lambda_layer" {
   source            = "github.com/dmitrijslotko/terraform_layer_builder.git?ref=v1.1.1_LTS"
   layer_name        = "my_layer"
   layer_directory   = "./layer"
-  modules_directory = "./layer/nodejs"
 }
 
 module "lambda" {
@@ -65,7 +64,6 @@ module "lambda_layer" {
   source            = "github.com/dmitrijslotko/terraform_layer_builder.git?ref=v1.1.1_LTS"
   layer_name        = "my_layer"
   layer_directory   = "./layer"
-  modules_directory = "./layer/nodejs"
   bucket          = "bucket-name"
   key             = "project_name/my_layer"
 }
