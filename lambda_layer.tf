@@ -24,7 +24,7 @@ data "archive_file" "dependencies" {
 resource "aws_lambda_layer_version" "lambda_layer" {
   layer_name          = var.layer_name
   compatible_runtimes = var.compatible_runtimes
-  source_code_hash    = filebase64sha256(data.archive_file.dependencies.output_path)
+  source_code_hash    = try(filebase64sha256(data.archive_file.dependencies.output_path), data.archive_file.dependencies.output_md5)
   skip_destroy        = var.skip_destroy
   s3_bucket           = local.s3_layer ? aws_s3_object.layer[0].bucket : null
   s3_key              = local.s3_layer ? aws_s3_object.layer[0].key : null
